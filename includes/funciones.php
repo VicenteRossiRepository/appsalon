@@ -10,14 +10,10 @@ function obtener_servicios()
         //Ejecutar consulta
         $consulta = mysqli_query($db, $sql);
         //Devolver resultados
-        echo '<pre>';
-        var_dump(mysqli_fetch_assoc($consulta));
-        echo '</pre>';
+        return $consulta;
 
-        
         //cerrar la conexion (opcional)
-        $resultado = mysqli_close($db);
-        echo $resultado;
+        mysqli_close($db);
     } catch (\Throwable $e) {
         var_dump($e);
     }
